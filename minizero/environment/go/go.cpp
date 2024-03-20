@@ -127,11 +127,13 @@ void GoEnv::reset()
     stone_bitboard_history_.clear();
     hashkey_history_.clear();
     hash_table_.clear();
+    is_eat_stone = false;
 }
 
 bool GoEnv::act(const GoAction& action)
 {
     if (!isLegalAction(action)) { return false; }
+    is_eat_stone = false;
 
     const int position = action.getActionID();
     const Player player = action.getPlayer();
@@ -171,7 +173,10 @@ bool GoEnv::act(const GoAction& action)
             if (neighbor_block->getPlayer() == player) {
                 new_block = combineBlocks(new_block, neighbor_block);
             } else {
-                if (neighbor_block->getNumLiberty() == 0) { removeBlockFromBoard(neighbor_block); }
+                if (neighbor_block->getNumLiberty() == 0) {
+                    is_eat_stone = true;
+                    removeBlockFromBoard(neighbor_block);
+                }
             }
         }
     }

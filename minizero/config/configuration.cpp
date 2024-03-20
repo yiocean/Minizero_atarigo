@@ -162,7 +162,7 @@ void setConfiguration(ConfigureLoader& cl)
     cl.addParameter("env_go_ko_rule", env_go_ko_rule, "the ko rules in Go: positional (only consider stones), situational (consider stones and the turn)", "Environment");
 #elif HEX
     cl.addParameter("env_hex_use_swap_rule", env_hex_use_swap_rule, "the swap rule in Hex", "Environment");
-#elif KILLALLGO
+#elif KILLALLGO || ATARIGO
     cl.addParameter("env_killallgo_ko_rule", env_go_ko_rule, "the ko rules in Killall-Go: positional (only consider stones), situational (consider stones and the turn)", "Environment");
 #elif GOMOKU
     cl.addParameter("env_gomoku_rule", env_gomoku_rule, "the rules of gomoku: normal (standard gomoku rule), outer_open (restricted first Black move)", "Environment");

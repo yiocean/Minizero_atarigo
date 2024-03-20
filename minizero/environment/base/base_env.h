@@ -21,7 +21,7 @@ using namespace minizero;
 // only support up to two players currently
 enum class Player {
     kPlayerNone = 0,
-    kPlayer1 = 1,
+    kPlayer1 = 1, // black
     kPlayer2 = 2,
     kPlayerSize = 3
 };

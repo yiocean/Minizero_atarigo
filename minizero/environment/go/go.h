@@ -98,6 +98,8 @@ protected:
     bool checkAreaDataStructure() const;
     bool checkBensonDataStructure() const;
 
+    bool is_eat_stone;
+
     float komi_;
     GoHashKey hash_key_;
     GoBitboard board_mask_bitboard_;
